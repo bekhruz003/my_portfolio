@@ -1,2 +1,39 @@
 from django.db import models
+from ckeditor_uploader.fields import RichTextUploadingField
+from django.utils.translation import gettext_lazy as _
+
+
+class HomeModel(models.Model):
+    title = models.CharField(max_length=100, verbose_name=_('title'))
+    full_name = models.CharField(max_length=100, verbose_name=_('full name'))
+    contact = models.CharField(max_length=100, verbose_name=_('contact'))
+    about = models.CharField(max_length=100, verbose_name=_('about'))
+    banner_image = models.ImageField(upload_to='banner', verbose_name=_('image'))
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name=_('created at'))
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = 'home'
+        verbose_name_plural = 'homies'
+
+
+class AboutModel(models.Model):
+    title = models.CharField(max_length=100, verbose_name=_('title'))
+    description = RichTextUploadingField(verbose_name=_('description'))
+    main_image = models.ImageField(upload_to='main/', verbose_name=_('main image'))
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name=_('created at'))
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = 'about'
+        verbose_name_plural = 'abouts'
+
+
+
+
+
 
