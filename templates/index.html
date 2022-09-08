@@ -3,7 +3,7 @@
 {% load i18n %}
 
 {% block content %}
-    {% for hom in object_list %}
+    {% for hom in home %}
         <section id="home" class="s-home target-section" data-parallax="scroll"
                  data-image-src="{{ hom.banner_image.url }}"
                  data-natural-width=3000 data-natural-height=2000 data-position-y=center>
@@ -125,23 +125,24 @@
 
                 <h3 class="h6">{% trans 'Send me a message' %}</h3>
 
-                <form name="contactForm" id="contactForm" method="post" action="" novalidate="novalidate">
+                <form method="post" action="" novalidate="novalidate">
+                    {% csrf_token %}
                     <fieldset>
 
                         <div class="form-field">
-                            <input name="contactName" type="text" id="contactName" placeholder="Your Name" value=""
+                            <input name="name" type="text" id="contactName" placeholder="Your Name" value=""
                                    minlength="2" required="" aria-required="true" class="full-width">
                         </div>
                         <div class="form-field">
-                            <input name="contactEmail" type="email" id="contactEmail" placeholder="Your Email" value=""
+                            <input name="email" type="email" id="contactEmail" placeholder="Your Email" value=""
                                    required="" aria-required="true" class="full-width">
                         </div>
                         <div class="form-field">
-                            <input name="contactSubject" type="text" id="contactSubject" placeholder="Subject" value=""
+                            <input name="subject" type="text" id="contactSubject" placeholder="Subject" value=""
                                    class="full-width">
                         </div>
                         <div class="form-field">
-                        <textarea name="contactMessage" id="contactMessage" placeholder="Your Message" rows="10"
+                        <textarea name="message" id="contactMessage" placeholder="Your Message" rows="10"
                                   cols="50" required="" aria-required="true" class="full-width"></textarea>
                         </div>
                         <div class="form-field">
@@ -158,16 +159,6 @@
 
                     </fieldset>
                 </form>
-
-                <!-- contact-warning -->
-                <div class="message-warning">
-                    Something went wrong. Please try again.
-                </div>
-
-                <!-- contact-success -->
-                <div class="message-success">
-                    Your message was sent, thank you!<br>
-                </div>
 
             </div> <!-- end contact-primary -->
 

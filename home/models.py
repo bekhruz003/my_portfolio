@@ -45,3 +45,18 @@ class WorkModel(models.Model):
     class Meta:
         verbose_name = 'work'
         verbose_name_plural = 'works'
+
+
+class ContactModel(models.Model):
+    name = models.CharField(max_length=100, verbose_name=_('name'))
+    email = models.EmailField(verbose_name=_('email'))
+    subject = models.CharField(max_length=255, verbose_name=_('subject'))
+    message = models.TextField(verbose_name=_('message'))
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name=_('created at'))
+
+    def str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = 'contact'
+        verbose_name_plural = 'contacts'
