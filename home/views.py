@@ -32,7 +32,6 @@ class ContactView(CreateView):
         return super().form_invalid(form)
 
     def form_valid(self, form):
-        print(send_bot_message(form.cleaned_data))
         # message = f"Здравствуйте {form.instance.name} ! ваше сообщение получено."
         # send_mail("Мы свяжемся с вами.", message, EMAIL_HOST_USER, [form.instance.email])
         send_bot_message(form.cleaned_data)
