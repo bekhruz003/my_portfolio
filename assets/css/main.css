@@ -1242,11 +1242,11 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 
 .subhead {
     font-family: "montserrat-bold", sans-serif;
-    font-size: 1.7rem;
+    font-size: 3rem;
     line-height: 1.333;
     text-transform: uppercase;
     letter-spacing: .25rem;
-    color: #39b54a;
+    color: #00363a;
     margin-top: 0;
     margin-bottom: 0;
 }
@@ -1255,6 +1255,20 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     color: #000000;
 }
 
+.subhead2 {
+    font-family: "montserrat-bold", sans-serif;
+    font-size: 3rem;
+    line-height: 1.333;
+    text-transform: uppercase;
+    letter-spacing: .25rem;
+    color: #993300;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.subhead2--dark {
+    color: #000000;
+}
 
 /* ------------------------------------------------------------------- 
  * responsive:
@@ -2200,7 +2214,7 @@ html.no-csstransitions .home-content__main {
 .s-about {
     padding-top: 16.2rem;
     padding-bottom: 9rem;
-    background-color: #39b54a;
+    background-color: darkslategray;
     color: #010507;
     position: relative;
 }
