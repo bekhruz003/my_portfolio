@@ -61,7 +61,7 @@
 
             <div class="row section-header has-bottom-sep" data-aos="fade-up">
                 <div class="col-full">
-                    <h1 class="display-1 display-1--light">{{ about.title }}</h1>
+                    <h1 class="display-1 display-1--dark">{{ about.title }}</h1>
                 </div>
             </div> <!-- end section-header -->
 
@@ -92,17 +92,20 @@
                 <h1 class="subhead">{% trans 'My Portfolio' %}</h1>
             </div>
         </div> <!-- end section-header -->
-        {% for work in works %}
-            <div class="card mb-3">
-                <img src="{{ work.work_image.url }}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h2 class="card-title text-center">{{ work.title }}</h2>
-                    <h3 class="card-text text-center">{{ work.body }}</h3>
+        <div class="row">
+            {% for work in works %}
+                <div class="col-md-4">
+                    <img src="{{ work.work_image.url }}" class="img-fluid" alt="...">
+                    <div class="card-body">
+                        <h1 class="card-title text-center">{{ work.title }}</h1>
+                        <h3 class="card-text text-center">{{ work.body }}</h3>
+                    </div>
                 </div>
-            </div>
-        {% endfor %}
+            {% endfor %}
+        </div>
+    </section>
+    <!-- end s-clients -->
 
-    </section> <!-- end s-clients -->
 
 
     <!-- contact
@@ -192,7 +195,8 @@
 
                     <ul class="contact-social">
                         <li>
-                            <a href="https://instagram.com/muhammadjonovich_01"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                            <a href="https://instagram.com/muhammadjonovich_01"><i class="fa fa-instagram"
+                                                                                   aria-hidden="true"></i></a>
                         </li>
                     </ul> <!-- end contact-social -->
 
